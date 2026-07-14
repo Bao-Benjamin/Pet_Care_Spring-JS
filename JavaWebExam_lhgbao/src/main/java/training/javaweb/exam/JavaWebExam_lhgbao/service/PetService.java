@@ -56,6 +56,6 @@ public class PetService {
 	}
 	private PetResponse toPetResponse(Pet pet) {
 		Owner owner = ownerRepository.getOwnerById(pet.getOwnerId());
-		return new PetResponse(pet.getId(),pet.getName(),pet.getAge(),owner.getName(),pet.getType(),pet.getWeight(),pet.getSpecies(), pet.getStatus(), pet.getImage());
+		return new PetResponse(pet.getId(),pet.getName(),pet.getAge(),owner.getName(),pet.getType(),pet.getWeight(),pet.getBreed(), pet.getStatus(), pet.getImage());
 	}
 }
