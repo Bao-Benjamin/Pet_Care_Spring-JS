@@ -10,7 +10,7 @@
 	</select>
 
 	<insert id="addPet">
-		insert into pet(name, age ,owner_id, type, weight, species, status) values
+		insert into pet(name, age ,owner_id, type, weight, breed, status) values
 		(
 		#{name},
 		#{age},
@@ -23,7 +23,7 @@
 	</insert>
 	<select id="getAllPets"
 		resultType="training.javaweb.exam.JavaWebExam_lhgbao.entities.Pet">
-		select p.name, p.age, p.owner_id, p.type , p.weight, p.species, p.status
+		select p.name, p.age, p.owner_id, p.type , p.weight, p.breed, p.status
 		, p.image
 		from pet p
 	</select>
@@ -35,7 +35,7 @@
         <if test="pet.ownerId != null">owner_id = #{pet.ownerId},</if>
         <if test="pet.type != null">type = #{pet.type},</if>
         <if test="pet.weight != null">weight = #{pet.weight},</if>
-        <if test="pet.species != null">species = #{pet.species},</if>
+        <if test="pet.species != null">species = #{pet.breed},</if>
         <if test="pet.status != null">status = #{pet.status},</if>
         <if test="pet.image != null">image = #{pet.image},</if>
     </set>
