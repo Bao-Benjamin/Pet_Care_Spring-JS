@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mappe namespace="training.javaweb.exam.JavaWebExam_lhgbao.mapper.BoardingRecordMapper">
+	<insert id="createBoardingRecord">
+		insert into boarding_record (pet_id, check_in_date, actual_return_date, price_per_day, base_fee, late_fee, total_fee, status  )
+		values 
+			#{petId},
+			#{checkInDate},
+			#{actualReturnDate},
+			#{pricePerDay},
+			#{baseFee},
+			#{lateFee},
+			#{lateFee},
+			#{totalFee},
+			#{status}
+	</insert>	
+</mapper>
