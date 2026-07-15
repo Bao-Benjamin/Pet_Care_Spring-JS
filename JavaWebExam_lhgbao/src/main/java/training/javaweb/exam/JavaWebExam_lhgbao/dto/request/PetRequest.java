@@ -13,24 +13,20 @@ public class PetRequest {
 	@NotEmpty(message="Type can not empty")
 	private Types type;
 	private Double weight;
-	private String species;
-	private BoardingStatus status;
+	private String breed;
 	private String image;
 	public PetRequest() {
 		super();
 	}
 	public PetRequest(@NotEmpty(message = "Name's pet can not empty") String name,
-			@NotEmpty(message = "Age's pet can not empty") Double age, Integer ownerId,
-			@NotEmpty(message = "Type can not empty") Types type, double weight, String species, BoardingStatus status,
-			String image) {
+			@NotEmpty(message = "Age's pet can not empty") Double age, Integer ownerId,	String image) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.ownerId = ownerId;
 		this.type = type;
 		this.weight = weight;
-		this.species = species;
-		this.status = status;
+		this.breed = breed;
 		this.image = image;
 	}
 
@@ -64,17 +60,15 @@ public class PetRequest {
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
-	public String getSpecies() {
-		return species;
+	
+	public String getBreed() {
+		return breed;
 	}
-	public void setSpecies(String species) {
-		this.species = species;
+	public void setBreed(String breed) {
+		this.breed = breed;
 	}
-	public BoardingStatus getStatus() {
-		return status;
-	}
-	public void setStatus(BoardingStatus status) {
-		this.status = status;
+	public void setWeight(Double weight) {
+		this.weight = weight;
 	}
 	public String getImage() {
 		return image;
@@ -85,7 +79,7 @@ public class PetRequest {
 	@Override
 	public String toString() {
 		return "PetRequest [name=" + name + ", age=" + age + ", ownerId=" + ownerId + ", type=" + type + ", weight="
-				+ weight + ", species=" + species + ", status=" + status + ", image=" + image + "]";
+				+ weight + ", species=" + breed + ", status=" + ", image=" + image + "]";
 	}
 	
 	

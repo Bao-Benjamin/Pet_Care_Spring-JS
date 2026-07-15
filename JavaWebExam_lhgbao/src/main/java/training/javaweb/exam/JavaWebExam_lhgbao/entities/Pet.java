@@ -1,5 +1,7 @@
 package training.javaweb.exam.JavaWebExam_lhgbao.entities;
 
+import java.time.LocalDateTime;
+
 import jakarta.validation.constraints.NotEmpty;
 import training.javaweb.exam.JavaWebExam_lhgbao.enums.status.BoardingStatus;
 import training.javaweb.exam.JavaWebExam_lhgbao.enums.types.Types;
@@ -7,29 +9,30 @@ import training.javaweb.exam.JavaWebExam_lhgbao.enums.types.Types;
 public class Pet {
 	private Integer id;
 	private String name;
-	private Double age;
-	private Integer ownerId;
 	private Types type;
-	private double weight;
-	private String species;
-	private BoardingStatus status;
+	private String breed;
+	private Double age;
+	private Double weight;
 	private String image;
+	private LocalDateTime createdAt;
+	private Integer ownerId;
 	public Pet() {
 		super();
 	}
-	public Pet(Integer id, String name, Double age, Integer ownerId, Types type, double weight, String species,
-			BoardingStatus status, String image) {
+	public Pet(Integer id, String name, Types type, String breed, Double age, double weight, 
+			String image, LocalDateTime createdAt, Integer ownerId) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.age = age;
-		this.ownerId = ownerId;
 		this.type = type;
+		this.breed = breed;
+		this.age = age;
 		this.weight = weight;
-		this.species = species;
-		this.status = status;
 		this.image = image;
+		this.createdAt = createdAt;
+		this.ownerId = ownerId;
 	}
+
 
 	public Integer getId() {
 		return id;
@@ -68,35 +71,33 @@ public class Pet {
 
 	public void setWeight(double weight) {
 		this.weight = weight;
-	}
-
-	public String getSpecies() {
-		return species;
-	}
-
-	public void setSpecies(String species) {
-		this.species = species;
-	}
-
-	public BoardingStatus getStatus() {
-		return status;
-	}
-
-	public void setStatus(BoardingStatus status) {
-		this.status = status;
-	}
-	
+	}	
 	public String getImage() {
 		return image;
 	}
 	public void setImage(String image) {
 		this.image = image;
 	}
+	
+	public String getBreed() {
+		return breed;
+	}
+	public void setBreed(String breed) {
+		this.breed = breed;
+	}
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
 	@Override
 	public String toString() {
-		return "Pet [id=" + id + ", name=" + name + ", age=" + age + ", ownerId=" + ownerId + ", type=" + type
-				+ ", weight=" + weight + ", species=" + species + ", status=" + status + "]";
+		return "Pet [id=" + id + ", name=" + name + ", type=" + type + ", breed=" + breed + ", age=" + age + ", weight="
+				+ weight + ", status=" + ", image=" + image + ", createdAt=" + createdAt + ", ownerId="
+				+ ownerId + "]";
 	}
+
 
 	
 	

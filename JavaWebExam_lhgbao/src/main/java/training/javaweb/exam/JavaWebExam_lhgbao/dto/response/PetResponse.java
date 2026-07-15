@@ -10,27 +10,23 @@ public class PetResponse {
 	private String ownerName;
 	private Types type;
 	private double weight;
-	private String species;
-	private BoardingStatus status;
+	private String breed;
 	private String image;
 	public PetResponse() {
 		super();
 	}
-	public PetResponse(String name, double age, String ownerName, Types type, double weight, String species,
-			BoardingStatus status, String image) {
+	public PetResponse(String name, double age, String ownerName, Types type, double weight, String species, String image) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.ownerName = ownerName;
 		this.type = type;
 		this.weight = weight;
-		this.species = species;
-		this.status = status;
+		this.breed = species;
 		this.image = image;
 	}
 	
-	public PetResponse(int id, String name, double age, String ownerName, Types type, double weight, String species,
-			BoardingStatus status, String image) {
+	public PetResponse(int id, String name, double age, String ownerName, Types type, double weight, String species, String image) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -38,8 +34,7 @@ public class PetResponse {
 		this.ownerName = ownerName;
 		this.type = type;
 		this.weight = weight;
-		this.species = species;
-		this.status = status;
+		this.breed = species;
 		this.image = image;
 	}
 	public String getName() {
@@ -67,19 +62,14 @@ public class PetResponse {
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
-	public String getSpecies() {
-		return species;
-	}
-	public void setSpecies(String species) {
-		this.species = species;
-	}
-	public BoardingStatus getStatus() {
-		return status;
-	}
-	public void setStatus(BoardingStatus status) {
-		this.status = status;
-	}
+	
 
+	public String getBreed() {
+		return breed;
+	}
+	public void setBreed(String breed) {
+		this.breed = breed;
+	}
 	public String getOwnerName() {
 		return ownerName;
 	}

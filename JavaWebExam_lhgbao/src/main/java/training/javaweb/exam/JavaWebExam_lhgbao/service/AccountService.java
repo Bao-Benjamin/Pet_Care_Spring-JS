@@ -33,6 +33,6 @@ public class AccountService {
 		OwnerRequest ownerRequest = new OwnerRequest();
 		ownerRequest.setHadAccount(true);
 		ownerService.updateOwner(ownerRequest, owner.getId());
-		return accountRepository.createAccount(passwordEncoder.encode(request.getPassword()), owner.getId(),Roles.ROLE_CUSTOMER);
+		return accountRepository.createAccount(owner.getPhoneNumber(), passwordEncoder.encode(request.getPassword()), owner.getId(),Roles.ROLE_CUSTOMER);
 	}
 }

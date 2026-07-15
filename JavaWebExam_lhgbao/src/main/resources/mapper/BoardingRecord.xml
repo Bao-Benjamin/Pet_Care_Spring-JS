@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mappe namespace="training.javaweb.exam.JavaWebExam_lhgbao.mapper.BoardingRecordMapper">
+<mapper namespace="training.javaweb.exam.JavaWebExam_lhgbao.mapper.BoardingRecordMapper">
 	<insert id="createBoardingRecord">
-		insert into boarding_record (pet_id, check_in_date, actual_return_date, price_per_day, base_fee, late_fee, total_fee, status  )
-		values 
+		insert into boarding_records (pet_id,check_in_date, expected_check_out, base_fee, total_fee, notes  )
+		values (
 			#{petId},
 			#{checkInDate},
-			#{actualReturnDate},
-			#{pricePerDay},
+			#{expectedReturnDate},
 			#{baseFee},
-			#{lateFee},
-			#{lateFee},
 			#{totalFee},
-			#{status}
+			#{notes}
+			
+		)
 	</insert>	
+	<select id="getAllBoardingRecord" resultType="training.javaweb.exam.JavaWebExam_lhgbao.entities.BoardingRecord">
+		select pet_id, check_in_date, actual_check_out, total_fee, status 
+		from boarding_records
+	</select>
+	<update id="checkout">
+		update boarding_records
+		<set>
+			<if test="lateFee != null and lateFee != 0 ">late_fee= #{lateFee},</if>
+			<if test="totalFee != null and totalFee != 0">total_fee=#{totalFee},</if>
+			status = "RETURNED"
+		</set>
+		where id = #{recordId}
+	</update>
+	<select id="getBoardingRecordById" resultType="training.javaweb.exam.JavaWebExam_lhgbao.entities.BoardingRecord">
+		select * from boarding_records where id = #{id}
+	</select>
 </mapper>
