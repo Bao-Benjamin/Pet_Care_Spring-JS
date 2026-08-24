@@ -10,7 +10,7 @@
 	</select>
 
 	<insert id="addPet">
-		insert into pets (name, age ,owner_id, type, weight, breed) values
+		insert into pet(name, age ,owner_id, type, weight, breed, status) values
 		(
 		#{name},
 		#{age},
@@ -22,8 +22,9 @@
 	</insert>
 	<select id="getAllPets"
 		resultType="training.javaweb.exam.JavaWebExam_lhgbao.entities.Pet">
-		select *
-		from pets p
+		select p.name, p.age, p.owner_id, p.type , p.weight, p.breed, p.status
+		, p.image
+		from pet p
 	</select>
 	<update id="updatePet" parameterType="map"> 
     update pets 
@@ -34,7 +35,8 @@
         <if test="pet.type != null">type = #{pet.type},</if>
         <if test="pet.weight != null">weight = #{pet.weight},</if>
         <if test="pet.species != null">species = #{pet.breed},</if>
-        <if test="pet.image != null">image_url = #{pet.image},</if>
+        <if test="pet.status != null">status = #{pet.status},</if>
+        <if test="pet.image != null">image = #{pet.image},</if>
     </set>
     where id = #{id}
 	</update>

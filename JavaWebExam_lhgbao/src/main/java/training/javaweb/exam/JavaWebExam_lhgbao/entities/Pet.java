@@ -12,14 +12,15 @@ public class Pet {
 	private Types type;
 	private String breed;
 	private Double age;
-	private Double weight;
+	private double weight;
+	private BoardingStatus status;
 	private String image;
 	private LocalDateTime createdAt;
 	private Integer ownerId;
 	public Pet() {
 		super();
 	}
-	public Pet(Integer id, String name, Types type, String breed, Double age, double weight, 
+	public Pet(Integer id, String name, Types type, String breed, Double age, double weight, BoardingStatus status,
 			String image, LocalDateTime createdAt, Integer ownerId) {
 		super();
 		this.id = id;
@@ -28,6 +29,7 @@ public class Pet {
 		this.breed = breed;
 		this.age = age;
 		this.weight = weight;
+		this.status = status;
 		this.image = image;
 		this.createdAt = createdAt;
 		this.ownerId = ownerId;
@@ -71,7 +73,16 @@ public class Pet {
 
 	public void setWeight(double weight) {
 		this.weight = weight;
-	}	
+	}
+
+	public BoardingStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(BoardingStatus status) {
+		this.status = status;
+	}
+	
 	public String getImage() {
 		return image;
 	}
@@ -94,7 +105,7 @@ public class Pet {
 	@Override
 	public String toString() {
 		return "Pet [id=" + id + ", name=" + name + ", type=" + type + ", breed=" + breed + ", age=" + age + ", weight="
-				+ weight + ", status=" + ", image=" + image + ", createdAt=" + createdAt + ", ownerId="
+				+ weight + ", status=" + status + ", image=" + image + ", createdAt=" + createdAt + ", ownerId="
 				+ ownerId + "]";
 	}
 
