@@ -1,5 +1,6 @@
 package training.javaweb.exam.JavaWebExam_lhgbao.entities;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.validation.constraints.NotEmpty;
@@ -8,28 +9,28 @@ import training.javaweb.exam.JavaWebExam_lhgbao.enums.status.BoardingStatus;
 public class BoardingRecord {
 	private Integer id;
     private Integer petId;
-    private LocalDateTime checkInDate;
-    private LocalDateTime expectedReturnDate;
-    private LocalDateTime actualReturnDate;
-    private Double pricePerDay;
+    private LocalDate checkInDate;
+    private LocalDate expectedCheckout;
+    private LocalDate actualCheckout;
     private Double baseFee;
     private Double lateFee;
     private Double totalFee;
 	private BoardingStatus status;
+	private String notes;
+	
+	
 	public BoardingRecord() {
 		super();
 	}
-	
-	public BoardingRecord(Integer id, Integer petId, LocalDateTime checkInDate, LocalDateTime expectedReturnDate,
-			LocalDateTime actualReturnDate, Double pricePerDay, Double baseFee, Double lateFee, Double totalFee,
-			BoardingStatus status) {
+
+	public BoardingRecord(Integer id, Integer petId, LocalDate checkInDate, LocalDate expectedCheckout,
+			LocalDate actualCheckout, Double baseFee, Double lateFee, Double totalFee, BoardingStatus status) {
 		super();
 		this.id = id;
 		this.petId = petId;
 		this.checkInDate = checkInDate;
-		this.expectedReturnDate = expectedReturnDate;
-		this.actualReturnDate = actualReturnDate;
-		this.pricePerDay = pricePerDay;
+		this.expectedCheckout = expectedCheckout;
+		this.actualCheckout = actualCheckout;
 		this.baseFee = baseFee;
 		this.lateFee = lateFee;
 		this.totalFee = totalFee;
@@ -48,29 +49,11 @@ public class BoardingRecord {
 	public void setPetId(Integer petId) {
 		this.petId = petId;
 	}
-	public LocalDateTime getCheckInDate() {
+	public LocalDate getCheckInDate() {
 		return checkInDate;
 	}
-	public void setCheckInDate(LocalDateTime checkInDate) {
+	public void setCheckInDate(LocalDate checkInDate) {
 		this.checkInDate = checkInDate;
-	}
-	public LocalDateTime getExpectedReturnDate() {
-		return expectedReturnDate;
-	}
-	public void setExpectedReturnDate(LocalDateTime expectedReturnDate) {
-		this.expectedReturnDate = expectedReturnDate;
-	}
-	public LocalDateTime getActualReturnDate() {
-		return actualReturnDate;
-	}
-	public void setActualReturnDate(LocalDateTime actualReturnDate) {
-		this.actualReturnDate = actualReturnDate;
-	}
-	public Double getPricePerDay() {
-		return pricePerDay;
-	}
-	public void setPricePerDay(Double pricePerDay) {
-		this.pricePerDay = pricePerDay;
 	}
 	public Double getBaseFee() {
 		return baseFee;
@@ -96,12 +79,28 @@ public class BoardingRecord {
 	public void setStatus(BoardingStatus status) {
 		this.status = status;
 	}
+	public LocalDate getActualCheckout() {
+		return actualCheckout;
+	}
+	public void setActualCheckout(LocalDate actualCheckout) {
+		this.actualCheckout = actualCheckout;
+	}
+	
+	public LocalDate getExpectedCheckout() {
+		return expectedCheckout;
+	}
+
+	public void setExpectedCheckout(LocalDate expectedCheckout) {
+		this.expectedCheckout = expectedCheckout;
+	}
+
 	@Override
 	public String toString() {
-		return "BoardingRecord [id=" + id + ", petId=" + petId + ", checkInDate=" + checkInDate
-				+ ", expectedReturnDate=" + expectedReturnDate + ", actualReturnDate=" + actualReturnDate
-				+ ", pricePerDay=" + pricePerDay + ", baseFee=" + baseFee + ", lateFee=" + lateFee + ", totalFee="
-				+ totalFee + ", status=" + status + "]";
+		return "BoardingRecord [id=" + id + ", petId=" + petId + ", checkInDate=" + checkInDate + ", expectedCheckout="
+				+ expectedCheckout + ", actualCheckout=" + actualCheckout + ", baseFee=" + baseFee + ", lateFee="
+				+ lateFee + ", totalFee=" + totalFee + ", status=" + status + "]";
 	}
+
+	
     
 }

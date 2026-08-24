@@ -15,10 +15,10 @@
 	<select id="getOwnerById" resultType="training.javaweb.exam.JavaWebExam_lhgbao.entities.Owner">
 	  select * from owners where id = #{id}
 	</select>
-	<update id="updateOwner"> Update owner 
+	<update id="updateOwner"> Update owners 
 		<set>
 			<if test="name != null and name != ''">name = #{name},</if>
-			<if test="phoneNumber != null and phoneNumber != ''">phone_number = #{phoneNumber},</if>
+			<if test="phoneNumber != null and phoneNumber != ''">phone = #{phoneNumber},</if>
 			<if test="email != null">email = #{email},</if>
 			<if test="address != null">address = #{address}</if>
 			<if test="had_account != null">had_Account = #{had_account}</if>

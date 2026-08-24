@@ -3,7 +3,8 @@
 
 <mapper namespace="training.javaweb.exam.JavaWebExam_lhgbao.mapper.AccountMapper">
 	<insert id="createAccount">
-		insert into account(password,owner_id, role) values(
+		insert into users(username,password,owner_id, role) values(
+			#{username},
 			#{password},
 			#{ownerId},
 			#{roles}

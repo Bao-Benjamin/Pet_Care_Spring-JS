@@ -10,7 +10,7 @@ import training.javaweb.exam.JavaWebExam_lhgbao.mapper.AccountMapper;
 public class AccountRepository {
 	@Autowired
 	AccountMapper accountMapper;
-	public int createAccount(String password, int ownerId, Roles role) {
-		return accountMapper.createAccount(password, ownerId, role);
+	public int createAccount(String userName,String password, int ownerId, Roles role) {
+		return accountMapper.createAccount(userName,password, ownerId, role);
 	}
 }

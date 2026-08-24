@@ -7,5 +7,5 @@ import training.javaweb.exam.JavaWebExam_lhgbao.enums.roles.Roles;
 
 @Mapper
 public interface AccountMapper {
-	int createAccount(@Param("password") String password,@Param("ownerId") int ownerId, @Param("roles") Roles role);
+	int createAccount(@Param("username") String username, @Param("password") String password,@Param("ownerId") int ownerId, @Param("roles") Roles role);
 }

@@ -1,31 +1,32 @@
 package training.javaweb.exam.JavaWebExam_lhgbao.entities;
 
+import java.time.LocalDateTime;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import training.javaweb.exam.JavaWebExam_lhgbao.enums.roles.Roles;
 
 public class Owner {
 	private Integer id;
-	@NotEmpty(message= "owner name can not empty")
 	private String name;
-	@NotEmpty(message="phone can not empty")
-	private String phoneNumber;
+	private String phone;
 	private String email;
 	private String address;
+	private LocalDateTime created;
 	private Boolean hadAccount;
 	public Owner() {
 		super();
 	}
 
-	public Owner(Integer id, @NotEmpty(message = "owner name can not empty") String name,
-			@NotEmpty(message = "phone can not empty") String phoneNumber, String email, String address,
+	public Owner(Integer id, String name, String phoneNumber, String email, String address, LocalDateTime created,
 			Boolean hadAccount) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.phoneNumber = phoneNumber;
+		this.phone = phoneNumber;
 		this.email = email;
 		this.address = address;
+		this.created = created;
 		this.hadAccount = hadAccount;
 	}
 
@@ -42,10 +43,10 @@ public class Owner {
 		this.name = name;
 	}
 	public String getPhoneNumber() {
-		return phoneNumber;
+		return phone;
 	}
 	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+		this.phone = phoneNumber;
 	}
 	public String getEmail() {
 		return email;
@@ -70,10 +71,18 @@ public class Owner {
 	public void setHadAccount(Boolean hadAccount) {
 		this.hadAccount = hadAccount;
 	}
+	
+	public LocalDateTime getCreated() {
+		return created;
+	}
+
+	public void setCreated(LocalDateTime created) {
+		this.created = created;
+	}
 
 	@Override
 	public String toString() {
-		return "Owner [id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email + ", address="
+		return "Owner [id=" + id + ", name=" + name + ", phoneNumber=" + phone + ", email=" + email + ", address="
 				+ address + ", hadAccount=" + hadAccount + "]";
 	}
 

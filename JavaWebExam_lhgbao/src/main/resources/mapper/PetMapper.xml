@@ -6,7 +6,7 @@
 
 	<select id="getByOwnerId"
 		resultType="training.javaweb.exam.JavaWebExam_lhgbao.entities.Pet">
-		select * from pet where owner_id = #{ownerId}
+		select * from pets where owner_id = #{ownerId}
 	</select>
 
 	<insert id="addPet">
@@ -17,8 +17,7 @@
 		#{ownerId},
 		#{type},
 		#{weight},
-		#{species},
-		#{status}
+		#{breed},
 		)
 	</insert>
 	<select id="getAllPets"
@@ -28,7 +27,7 @@
 		from pet p
 	</select>
 	<update id="updatePet" parameterType="map"> 
-    update pet 
+    update pets 
     <set>
         <if test="pet.name != null and pet.name != ''">name = #{pet.name},</if>
         <if test="pet.age != null">age = #{pet.age},</if>
@@ -42,18 +41,18 @@
     where id = #{id}
 	</update>
 	<select id="getPetById" resultType="training.javaweb.exam.JavaWebExam_lhgbao.entities.Pet">
-		select * from pet
+		select * from pets
 		where id= #{id}
 	</select>
 	<delete id="deletePet">
-	 	delete from pet where id= #{id};
+	 	delete from pets where id= #{id};
 	</delete>
 	<select id="filterByType" resultType="training.javaweb.exam.JavaWebExam_lhgbao.entities.Pet">
-		select * from pet
+		select * from pets
 		where type = #{type}
 	</select>
 	<select id="findPetByOwner" resultType = "training.javaweb.exam.JavaWebExam_lhgbao.entities.Pet">
-		 select * from pet
+		 select * from pets
 		 where owner_id = #{owner_Id}
 	</select>
 	

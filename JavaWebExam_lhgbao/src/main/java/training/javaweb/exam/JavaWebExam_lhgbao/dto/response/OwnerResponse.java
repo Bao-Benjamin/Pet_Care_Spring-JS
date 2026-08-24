@@ -6,7 +6,7 @@ import training.javaweb.exam.JavaWebExam_lhgbao.apiFormat.APIReponse;
 import training.javaweb.exam.JavaWebExam_lhgbao.enums.roles.Roles;
 
 public class OwnerResponse{
-	private int id;
+	private Integer id;
 	private String name;
 	private String phoneNumber;
 	private String email;
@@ -15,7 +15,7 @@ public class OwnerResponse{
 	public OwnerResponse() {
 		super();
 	}
-	public OwnerResponse(int id, String name, String phoneNumber, String email, String address, Boolean hadAccount) {
+	public OwnerResponse(Integer id, String name, String phoneNumber, String email, String address, Boolean hadAccount) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -45,11 +45,11 @@ public class OwnerResponse{
 		this.email = email;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getAddress() {
